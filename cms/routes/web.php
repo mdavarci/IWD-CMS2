@@ -11,6 +11,7 @@
 |
 */
 Route::resource('/posts', 'PostsController');
+Route::resource('/pages', 'PagesController');
 
 Route::get('/', 'PostsController@index')->name('home');
 // Route::get('/posts/create', 'PostsController@create');
@@ -36,4 +37,4 @@ Route::get('/logout', 'SessionsController@destroy');
 Route::resource('/menus', 'MenuController');
 Route::get('/menus', 'MenuController@index')->middleware('role:Admin');
 
-Route::resource('/pages', 'PagesController');
+

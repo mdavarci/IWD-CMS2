@@ -13,7 +13,7 @@ class CreatePagesTable extends Migration
      */
     public function up()
   {
-        Schema::create('paged', function (Blueprint $table) {
+        Schema::create('pages', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedinteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');

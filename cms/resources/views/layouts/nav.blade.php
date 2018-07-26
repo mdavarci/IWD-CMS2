@@ -32,7 +32,7 @@
             <ul class="navbar-nav ml-auto">
               <li class="nav-item"><a href="/menus" class="nav-link ">Menu</a>
               </li>
-              <li class="nav-item"><a href="/posts" class="nav-link active ">Posts</a>
+              <li class="nav-item"><a href="/posts" class="nav-link active ">Postsss</a>
               </li>
               <li class="nav-item"><a href="/pages" class="nav-link ">Pages</a>
               </li>
