@@ -48,11 +48,4 @@ class Page extends Model
         return "/pages/" . $this->id;
 
     }
-
-    public function getSummary()
-    {
-
-      return substr($this->body, 0, 100);
-
-    }
 }

@@ -19,6 +19,16 @@ class AppServiceProvider extends ServiceProvider
 
 
         });
+
+
+
+          view()->composer('*', function ($viewPageMenu1){
+
+            $viewPageMenu1->with('pages', \App\Page::all());
+
+        });
+
+
     }
 
     /**

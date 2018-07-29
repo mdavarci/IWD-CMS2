@@ -22,7 +22,8 @@ Route::get('/posts/{post}/edit', 'PostsController@edit')->middleware('role:Edito
 
 
 Route::resource('/posts/{post}/comments', 'CommentsController');
-Route::get('/posts/{post}/comments', 'CommentsController@edit');
+Route::get('/posts/{post}/comments', 'CommentsController@edit')->middleware('role:Editor');
+Route::get('/posts/{post}/comments', 'CommentsController@destroy')->middleware('role:Editor');
 // Route::patch('/comments/{id}', 'CommentController@patch')->name('comment.update');
 
 // Route::post('/posts/{post}/comments', 'CommentsController@store');

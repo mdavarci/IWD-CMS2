@@ -56,16 +56,9 @@ class PagesController extends Controller
 
             ]);
 
-            auth()->user()->publish(
+            auth()->user()->publishPage(
                 new Page(request(['title', 'body']))
             );
-
-
-        //  Post::create([
-        //  'title' => request('title'),
-        //  'body' => request('body'),
-        //  'user_id' => auth()->id()
-        // ]);
 
            return redirect('/');
     }
@@ -74,7 +67,7 @@ class PagesController extends Controller
          public function edit ($id)
     {
 
-                $pages = Page::find($id);
+                $page = Page::find($id);
            return view('pages.edit', compact('page'));
     }
 
@@ -96,10 +89,6 @@ class PagesController extends Controller
                 'title',
                 'body']));
 
-        // $post->update([ 'title' => request('title'), 'body' => request('body') ]);
-
-
-           // return view('posts.edit', compact('post'));
             return redirect()->back();
     }
 }

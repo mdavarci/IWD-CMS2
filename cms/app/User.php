@@ -34,6 +34,13 @@ class User extends Authenticatable
         return $this->hasMany(Post::class);
     }
 
+    public function pages()
+    {
+
+        return $this->hasMany(Post::class);
+    }
+
+
     public function comments()
     {
         return $this->hasMany(Comment::class);
@@ -43,6 +50,12 @@ class User extends Authenticatable
     {
 
         $this->posts()->save($post);
+    }
+
+     public function publishPage(Page $page)
+    {
+
+        $this->pages()->save($page);
     }
 
     public function getAuthPassword() {

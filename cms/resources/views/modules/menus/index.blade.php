@@ -1,18 +1,20 @@
-@extends('layouts.layout')
+@extends ('layouts.layout')
 
 @section('content')
 
-		  <div class="col-md-8 blog-main">
-          
-        
-            @foreach ($menus as $menu)
-                @include('modules.menus.menu')
+<div class="container">
+<span><a class="btn btn-sm btn-outline-secondary" href="/pages/create">Create new page</a></span>
+
+</div>
+
+        <div class="container">
+            <div class="row">
+              <!-- post -->
+            @foreach ($pages as $page)
+                @include('pages.page')
+                <span><a class="btn btn-sm btn-outline-secondary" href="{{ $page->path() }}/edit">Edit page</a></span>
             @endforeach
 
-            <nav class="blog-pagination">
-              <a class="btn btn-outline-primary" href="#">Older</a>
-              <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
-            </nav>
-
-        </div><!-- /.blog-main -->
+            </div>
+          </div>
 @endsection

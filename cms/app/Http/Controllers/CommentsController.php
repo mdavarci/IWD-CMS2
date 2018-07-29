@@ -29,11 +29,20 @@ class CommentsController extends Controller
 			$comment->update(request([
 				'body']));
 
-		// $post->update([ 'title' => request('title'), 'body' => request('body') ]);
-
-
 		   return redirect()->back();
 	}
+
+
+	public function destroy($post_id, Comment $comment)
+    {
+       
+
+        $comment->delete();
+        return redirect()->back();
+
+
+
+    }
 
 
 }
