@@ -58,6 +58,14 @@
 						</div>
 						<div class="form-group">
 										<button type="submit" class="btn btn-primary">Edit comment</button>
+						</div>
+				</form>
+
+
+				<form method="POST" action="{{ $post->path() }}/{{ $comment->path() }}">
+					@csrf
+					{{ method_field('DELETE') }}
+						<div class="form-group">
 										<button type="submit" class="btn btn-primary">Delete comment</button>
 						</div>
 				</form>

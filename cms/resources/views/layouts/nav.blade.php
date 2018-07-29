@@ -30,9 +30,9 @@
             @if (Auth::check())
           <div id="navbarcollapse" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item"><a href="/menus" class="nav-link ">Menu</a>
+              <li class="nav-item"><a href="/menus" class="nav-link ">Menu editor</a>
               </li>
-              <li class="nav-item"><a href="/posts" class="nav-link active ">Posts</a>
+              <li class="nav-item"><a href="/posts" class="nav-link">Posts</a>
               </li>
         
                 <a href="#" class="nav-link ">{{Auth::user()->name}}</a>
@@ -48,14 +48,22 @@
             <ul class="navbar-nav ml-auto">
 
             @auth
+
+
+            <div class="form-group">  
+            
             <a class="btn btn-sm btn-outline-secondary" href="/posts/create">Create new post</a>
 
             <a class="btn btn-sm btn-outline-secondary" href="/logout">Logout</a>
+
+            </div>
             @endauth
 
            @guest
+           <div class="form-group">  
             <a class="btn btn-sm btn-outline-secondary" href="/register">Register</a><span>    </span>
             <a class="btn btn-sm btn-outline-secondary" href="/login">Login</a></ul>
+            </div>
            @endguest
           </div>
         </div>

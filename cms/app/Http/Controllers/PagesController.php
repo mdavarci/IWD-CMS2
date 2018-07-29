@@ -91,4 +91,13 @@ class PagesController extends Controller
 
             return redirect()->back();
     }
+
+    public function destroy ($id)
+    {       
+        $page = Page::find($id);
+        $page->delete();
+        
+
+        return back();   
+    }
 }

@@ -5,7 +5,7 @@
 <!-- Widget [Latest Posts Widget]        -->
 <div class="widget latest-posts">
   <header>
-    <h3 class="h6"><a href="/pages" class="nav-link ">All information pages</a></h3>
+    <h3 class="h6"><a href="/pages" class="nav-link ">Information Menu</a></h3>
   </header>
   @foreach ($pages as $page)
     <div class="blog-posts">
