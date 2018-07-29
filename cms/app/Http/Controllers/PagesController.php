@@ -8,12 +8,14 @@ use Carbon\Carbon;
 
 class PagesController extends Controller
 {
+    // Door middleware wordt gecontroleerd of een persoon geautoriseerd is op te kijken.
     public function __construct()
     {
 
         $this->middleware('auth', ['except' => 'destroy']);
     }
 
+    // Maak een 
     public function index ()
     {
             
@@ -32,6 +34,8 @@ class PagesController extends Controller
 
 
     }
+
+    // Functie create voor pages.
  
     public function create ()
     {
@@ -39,12 +43,16 @@ class PagesController extends Controller
 
     }
 
+    // Functie show voor pages.
+
       public function show ($id)
     {
             $page = Page::find($id);
            return view('pages.show', compact('page'));
 
     }
+
+    // Functie store voor pages.
 
      public function store ()
     {
@@ -64,12 +72,15 @@ class PagesController extends Controller
     }
 
 
+     // Functie edit voor pages.
          public function edit ($id)
     {
 
                 $page = Page::find($id);
            return view('pages.edit', compact('page'));
     }
+
+    // Functie update voor pages.
 
      public function update ($id)
     {
@@ -91,6 +102,8 @@ class PagesController extends Controller
 
             return redirect()->back();
     }
+
+    // Functie destroy voor pages.
 
     public function destroy ($id)
     {       

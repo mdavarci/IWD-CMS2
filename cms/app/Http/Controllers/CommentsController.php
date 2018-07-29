@@ -9,7 +9,7 @@ use App\Comment;
 
 class CommentsController extends Controller
 {
-    
+    // Nieuwe comment wordt opgeslagen en er wordt gecontroleerd of er wel iets wordt ingevuld.
 	 public function store (Post $post)
 	{
 		$this->validate(request(), ['body'=>'required']);
@@ -18,6 +18,7 @@ class CommentsController extends Controller
 		return back();
 	}
 
+	// comment wordt geupdate, voor als iemand zijn comment wil veranderen.
 	 public function update ($post_id, Comment $comment)
 	{
 
@@ -32,6 +33,7 @@ class CommentsController extends Controller
 		   return redirect()->back();
 	}
 
+	// comment wordt verwijderd.
 
 	public function destroy($post_id, Comment $comment)
     {

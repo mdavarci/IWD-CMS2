@@ -63,12 +63,6 @@ class PostsController extends Controller
 			);
 
 
-		// 	Post::create([
-		// 	'title' => request('title'),
-		// 	'body' => request('body'),
-		// 	'user_id' => auth()->id()
-		// ]);
-
 		   return redirect('/');
 	}
 
@@ -98,10 +92,6 @@ class PostsController extends Controller
 				'title',
 				'body']));
 
-		// $post->update([ 'title' => request('title'), 'body' => request('body') ]);
-
-
-		   // return view('posts.edit', compact('post'));
 			return redirect()->back();
 	}
 

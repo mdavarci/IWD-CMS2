@@ -6,11 +6,13 @@ use Illuminate\Http\Request;
 
 class SessionsController extends Controller
 {
+    // Zorgt ervoor dat gasten dit kunnen lezen.
 	public function __construct()
 	{
 		$this->middleware('guest', ['except' => 'destroy']);
 	}
 
+    // Maak sessie aan.
     public function create()
     {
     	return view('sessions.create');
@@ -32,6 +34,7 @@ class SessionsController extends Controller
 
 	}
 
+    // Vernietig huidige sessie van de geautoriseerde persoon.
      public function destroy()
     {
     	auth()->logout();
