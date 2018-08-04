@@ -5,7 +5,9 @@
             <div class="row">
               <!-- post -->
             @foreach ($pages as $page)
-                @include('pages.page')
+	            @if ($page->place === 2)
+	                @include('pages.page')
+	            @endif
             @endforeach
 
             </div>

@@ -15,11 +15,9 @@ class PagesController extends Controller
         $this->middleware('auth', ['except' => 'destroy']);
     }
 
-    // Maak een 
+    // Functie index voor pages 
     public function index ()
-    {
-            
-
+    {            
         if (empty(request(['month', 'year']))) {
             $pages = Page::latest()->get();
 
@@ -31,8 +29,6 @@ class PagesController extends Controller
             ->get();
 
         return view('pages.index', compact('pages'));
-
-
     }
 
     // Functie create voor pages.
@@ -60,12 +56,13 @@ class PagesController extends Controller
             $this->validate(request(),[
 
                 'title' => 'required',
-                'body' => 'required'
+                'body' => 'required',
+                'place' => 'required'
 
             ]);
 
             auth()->user()->publishPage(
-                new Page(request(['title', 'body']))
+                new Page(request(['title', 'body', 'place']))
             );
 
            return redirect('/');
@@ -90,7 +87,8 @@ class PagesController extends Controller
                 $this->validate(request(),[
 
                 'title' => 'required',
-                'body' => 'required'
+                'body' => 'required',
+                'place' => 'required',
 
             ]);
 
@@ -98,7 +96,8 @@ class PagesController extends Controller
             $page->update(request([
 
                 'title',
-                'body']));
+                'body',
+                'place']));
 
             return redirect()->back();
     }
@@ -111,6 +110,6 @@ class PagesController extends Controller
         $page->delete();
         
 
-        return back();   
+        return redirect('/');   
     }
 }

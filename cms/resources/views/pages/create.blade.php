@@ -21,6 +21,14 @@
 			</div>
 
 			<div class="form-group">
+              <select name="place" id="place" class="form-control">
+                  <option value="">Select place</option>
+                  <option value="1">Menu</option>
+                  <option value="2">Pages</option>
+              </select>
+            </div>
+
+			<div class="form-group">
 		 		<button type="submit" class="btn btn-primary">Publish</button>
 			</div>
 		</form>

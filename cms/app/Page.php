@@ -8,7 +8,7 @@ use Carbon\Carbon;
 
 class Page extends Model
 {
-     protected $fillable = ['title', 'body'];
+     protected $fillable = ['title', 'body', 'place'];
 
     public function scopeFilter($query, $filters)
     {
@@ -48,4 +48,5 @@ class Page extends Model
         return "/pages/" . $this->id;
 
     }
+
 }
