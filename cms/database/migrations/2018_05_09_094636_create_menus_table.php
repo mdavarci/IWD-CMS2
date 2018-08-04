@@ -17,12 +17,6 @@ class CreateMenusTable extends Migration
             $table->increments('id');
 
             $table->string('name');
-
-            // many to many relationship dus moet pivot worden, dus onderstaande moet eruits
-            // $table->integer('elements')->nullable()->unsigned();
-            // $table->foreign('elements')->references('id')->on('posts');
-
-            // $table->timestamps();
         });
     }
 
