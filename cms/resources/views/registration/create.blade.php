@@ -41,13 +41,6 @@
 
 		</form>
 
-
-		</form>
-
-
-
-
-
 	</div>
 
 @endsection

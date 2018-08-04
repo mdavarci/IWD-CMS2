@@ -17,12 +17,10 @@
             </div>
           </div>
         </div>
-
-
         <div class="container">
           <!-- Navbar Brand -->
           <div class="navbar-header d-flex align-items-center justify-content-between">
-            <!-- Navbar Brand --><a href="index.html" class="navbar-brand">Mirkan Blog</a>
+            <!-- Navbar Brand --><a href="#" class="navbar-brand">Mirkan Blog</a>
             <!-- Toggle Button-->
             <button type="button" data-toggle="collapse" data-target="#navbarcollapse" aria-controls="navbarcollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span></span><span></span><span></span></button>
           </div>
@@ -30,15 +28,10 @@
             @if (Auth::check())
           <div id="navbarcollapse" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item"><a href="/menus" class="nav-link ">Menu editor</a>
-              </li>
-              <li class="nav-item"><a href="/posts" class="nav-link">Posts</a>
-              </li>
-        
-                <a href="#" class="nav-link ">{{Auth::user()->name}}</a>
-           
-              </li>
-
+              <li class="nav-item"><a href="/menus" class="nav-link ">Page editor</a></li>
+              <li class="nav-item"><a href="/pages" class="nav-link">Pages</a></li>
+              <li class="nav-item"><a href="/posts" class="nav-link">Posts</a></li>
+              <li><a href="#" class="nav-link ">{{Auth::user()->name}}</a></li>
             </ul>
 
             <div class="navbar-text"><a href="#" class="search-btn"><i class="icon-search-1"></i></a></div>
@@ -49,22 +42,21 @@
 
             @auth
 
+              <div class="form-group">  
+              
+              <a class="btn btn-sm btn-outline-secondary" href="/posts/create">Create new post</a>
 
-            <div class="form-group">  
-            
-            <a class="btn btn-sm btn-outline-secondary" href="/posts/create">Create new post</a>
+              <a class="btn btn-sm btn-outline-secondary" href="/logout">Logout</a>
 
-            <a class="btn btn-sm btn-outline-secondary" href="/logout">Logout</a>
-
-            </div>
+              </div>
             @endauth
 
-           @guest
-           <div class="form-group">  
-            <a class="btn btn-sm btn-outline-secondary" href="/register">Register</a><span>    </span>
-            <a class="btn btn-sm btn-outline-secondary" href="/login">Login</a></ul>
-            </div>
-           @endguest
+            @guest
+             <div class="form-group">  
+              <a class="btn btn-sm btn-outline-secondary" href="/register">Register</a><span>    </span>
+              <a class="btn btn-sm btn-outline-secondary" href="/login">Login</a></ul>
+              </div>
+            @endguest
           </div>
         </div>
       </nav>

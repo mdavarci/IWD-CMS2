@@ -1,13 +1,12 @@
 @auth
 <aside class="col-md-4 blog-sidebar">
- 
-
 <!-- Widget [Latest Posts Widget]        -->
 <div class="widget latest-posts">
   <header>
-    <h3 class="h6"><a href="/pages" class="nav-link ">Information Menu</a></h3>
+    <h3 class="h6">Information Menu</h3>
   </header>
   @foreach ($pages as $page)
+    @if ($page->place === 1)
     <div class="blog-posts">
       <a href="{{ $page->path()}}">
         <div class="item d-flex align-items-center">
@@ -16,24 +15,21 @@
         </div>
       </a>
     </div>
+    @endif
   @endforeach
 </div>
-
-
-
      <!-- Widget [Search Bar Widget]-->
-          <div class="widget search">
-            <header>
-              <h3 class="h6">Search the blog</h3>
-            </header>
-            <form action="#" class="search-form">
-              <div class="form-group">
-                <input type="search" placeholder="What are you looking for?">
-                <button type="submit" class="submit"><i class="icon-search"></i></button>
-              </div>
-            </form>
-          </div>
-
+<div class="widget search">
+  <header>
+    <h3 class="h6">Search the blog</h3>
+  </header>
+  <form action="#" class="search-form">
+    <div class="form-group">
+      <input type="search" placeholder="What are you looking for?">
+      <button type="submit" class="submit"><i class="icon-search"></i></button>
+    </div>
+  </form>
+</div>
 <!-- Nep data en menu, staat wel mooi -->
  <div class="widget tags">       
         <header>

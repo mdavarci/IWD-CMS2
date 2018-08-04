@@ -1,3 +1,4 @@
+<!-- Is allemaal lorum ipsum spul, niet functioneel(nog) maar wel mooi -->
     <footer class="main-footer">
       <div class="container">
         <div class="row">

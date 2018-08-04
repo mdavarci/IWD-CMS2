@@ -30,12 +30,6 @@
 		</form>
 
 
-		</form>
-
-
-
-
-
 	</div>
 
 @endsection
