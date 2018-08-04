@@ -26,8 +26,6 @@ class Post extends Model
 
     	]));
 
-    	// $this->comments()->ceate(['body'=> $body]);
-    	//$this->comments()->ceate(compact('body'));
     }
 
     public function scopeFilter($query, $filters)

@@ -95,4 +95,13 @@ class PostsController extends Controller
 			return redirect()->back();
 	}
 
+	public function destroy ($id)
+    {       
+        $page = Post::find($id);
+        $page->delete();
+        
+
+        return redirect('/');   
+    }
+
 }
